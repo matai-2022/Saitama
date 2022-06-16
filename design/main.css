@@ -1,24 +1,56 @@
 body {
-    background-color: coral;
+    background-color: whitesmoke;
 }
 
 .dashBoard {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    bottom: 100%;
     background-color: green;
+    justify-content: center
 }
 
 .people {
     width: 10px;
     height: 10px;
+    background-color: blue;
+}
+.form{
+  width: 40px;
+    height: 40px;
+    background-color: red;
+    justify-content: center;
 }
 
 .chores {
     width: 20px;
     height: 20px;
+    background-color: orange;
+    display: flex; /* or inline-flex */
 }
 
-.people,
-.chores {
-    background-color: blue;
+footer {
+  text-decoration: underline;
+  text-align: right;
+  
 }
+
+h1 {
+  font-family: 'Anton';
+  text-align: center;
+  color: red;
+  font-size: 500%;
+  font-weight: bold;
+/* 
+  margin: 0; padding: 0;
+  position: relative; width: 90%; margin: 0 auto; */
+}
+
+/* .people,
+.chores,
+.form {
+    background-color: blue;
+    display: right;
+} */
+
