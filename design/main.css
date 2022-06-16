@@ -2,10 +2,6 @@ body {
     background-color: whitesmoke;
 }
 
-.dashBoard {
-    
-}
-
 .column {
   float: left;
   width: 33.33%;
@@ -95,35 +91,42 @@ h4 {
   margin-top: -10%;
 }
 
-
 /* footer styling */
 .footer {
   width: 100%;
   height: auto;
   display: flex;
 }
-.assignButton{
+#assignButton{
   margin:auto;
-  width: 2.4em;
+  width:5em;
   height: 2.4em;
-  border: 1px solid #ffffff;
+  border: 2 solid #ffffff;
   border-radius: 8px;
   font-size: 1em; 
   text-align: center;
   display: flex;
-  background-color: transparent;
-  
+  background-color: whitesmoke;
+  justify-content: center;
+}
+#assignButton #assignText {
+  text-align: center;
+  font-size: 13px;
+  color: black;
   
 }
 
 #saitamaFoot{
-  border-radius: 50%;
+  border-radius: 30%;
   object-fit: cover;
   width: 230px;
   height:230px
 }
-#assignText {
-  text-align: center;
-  font-size: 20px;
+
+.footer-img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
 }
 
