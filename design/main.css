@@ -7,50 +7,73 @@ body {
     height: 100%;
     top: 100%;
     bottom: 100%;
-    background-color: green;
-    justify-content: center
-}
-
-.people {
-    width: 10px;
-    height: 10px;
-    background-color: blue;
-}
-.form{
-  width: 40px;
-    height: 40px;
-    background-color: red;
+    background-color: lightblue;
     justify-content: center;
+    padding: 0;
+  margin: 0;
 }
 
-.chores {
-    width: 20px;
-    height: 20px;
-    background-color: orange;
-    display: flex; /* or inline-flex */
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.dashBoard:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+h2 {
+  text-align: center;
+}
+
+h4 {
+  text-decoration: underline;
+  text-align: right;
 }
 
 footer {
-  text-decoration: underline;
-  text-align: right;
   
+  background-color: blanchedalmond;
 }
 
-h1 {
+.footer-img {
+  width: 50px;
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.content-wrapper {
+  width: 100%;
+
+}
+
+.text-wrapper img {
+  width: 100%;
+
+}
+
+.text-wrapper {
+  width: 100%;
+  position: relative;
+  margin-top: -45%;
+}
+
+.text-wrapper h1 {
   font-family: 'Anton';
   text-align: center;
   color: red;
   font-size: 500%;
   font-weight: bold;
-/* 
-  margin: 0; padding: 0;
-  position: relative; width: 90%; margin: 0 auto; */
+  margin-top: -10%;
 }
 
-/* .people,
-.chores,
-.form {
-    background-color: blue;
-    display: right;
-} */
+
 
