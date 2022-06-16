@@ -53,17 +53,6 @@ h4 {
   text-align: center;
 }
 
-footer {
-  
-  background-color: blanchedalmond;
-}
-
-.footer-img {
-  border-radius: 50%;
-  object-fit: cover;
-  width: 150px;
-  height: 150px;
-}
 
 
 *{
@@ -97,7 +86,6 @@ footer {
   margin-top: -10%;
 }
 
-<<<<<<< HEAD
 /* footer styling */
 .footer {
   width: 100%;
@@ -114,8 +102,6 @@ footer {
   text-align: center;
   display: flex;
   background-color: transparent;
-  
-  
 }
 
 #saitamaFoot{
@@ -127,5 +113,12 @@ footer {
 #assignText {
   text-align: center;
   font-size: 20px;
+  
+}
+.footer-img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
 }
 
