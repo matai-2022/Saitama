@@ -1,11 +1,6 @@
 import React, { useState } from 'react'
 
 function Form(props) {
-  // make another button done
-  // get form data
-  // pass form data into app.jsx
-  // clear text field
-
   const [form, setForm] = useState({
     chorePeople: '',
   })
@@ -16,7 +11,7 @@ function Form(props) {
 
   function addPerson(event) {
     event.preventDefault()
-    props.getFormData(form)
+    props.getFormData({ ...form, table: 'People' })
     setForm({
       chorePeople: '',
     })
@@ -24,6 +19,10 @@ function Form(props) {
 
   function addChore(event) {
     event.preventDefault()
+    props.getFormData({ ...form, table: 'Chores' })
+    setForm({
+      chorePeople: '',
+    })
   }
 
   return (

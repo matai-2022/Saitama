@@ -1,4 +1,4 @@
 export default {
-  People: [''],
-  Chores: ['']
+  People: [],
+  Chores: [],
 }
