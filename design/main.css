@@ -1,0 +1,24 @@
+body {
+    background-color: coral;
+}
+
+.dashBoard {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+.people {
+    width: 10px;
+    height: 10px;
+}
+
+.chores {
+    width: 20px;
+    height: 20px;
+}
+
+.people,
+.chores {
+    background-color: blue;
+}
