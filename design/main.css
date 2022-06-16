@@ -40,7 +40,10 @@ footer {
 }
 
 .footer-img {
-  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
 }
 
 
@@ -75,5 +78,34 @@ footer {
   margin-top: -10%;
 }
 
+/* footer styling */
+.footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.assignButton{
+  margin:auto;
+  width: 2.4em;
+  height: 2.4em;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  font-size: 1em; 
+  text-align: center;
+  display: flex;
+  background-color: transparent;
+  
+  
+}
 
+#saitamaFoot{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 230px;
+  height:230px
+}
+#assignText {
+  text-align: center;
+  font-size: 20px;
+}
 
