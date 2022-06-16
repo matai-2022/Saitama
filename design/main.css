@@ -3,19 +3,29 @@ body {
 }
 
 .dashBoard {
-    width: 100%;
-    height: 100%;
-    top: 100%;
-    bottom: 100%;
-    background-color: lightblue;
-    justify-content: center;
-    padding: 0;
-  margin: 0;
+    
 }
 
 .column {
   float: left;
   width: 33.33%;
+  padding: 13px;
+  color: whitesmoke;
+  min-height: 350px;
+  border: 1px;
+  text-align: right  ;
+}
+.columnImg {
+  
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+
 }
 
 .dashBoard:after {
@@ -29,9 +39,18 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  text-align: center;
+  font-family: 'Anton';
+  color: whitesmoke;
+  font-size: 200%;
+  text-decoration: underline;
+  
+}
+
 h4 {
   text-decoration: underline;
-  text-align: right;
+  text-align: center;
 }
 
 footer {
@@ -78,6 +97,7 @@ footer {
   margin-top: -10%;
 }
 
+<<<<<<< HEAD
 /* footer styling */
 .footer {
   width: 100%;
