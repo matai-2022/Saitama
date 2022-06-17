@@ -26,16 +26,20 @@ function Form(props) {
   }
 
   return (
-    <form>
-      <input
-        type="text"
-        name="chorePeople"
-        onChange={onFormChange}
-        value={form.chorePeople}
-      />
-      <button onClick={addPerson}>ADD Person</button>
-      <button onClick={addChore}>ADD Chore</button>
-    </form>
+    <div className="column">
+      <h3> Form </h3>
+      <form>
+        <input
+          type="text"
+          name="chorePeople"
+          onChange={onFormChange}
+          value={form.chorePeople}
+        />
+        <br></br>
+        <button onClick={addPerson}>ADD Person</button>
+        <button onClick={addChore}>ADD Chore</button>
+      </form>
+    </div>
   )
 }
 
