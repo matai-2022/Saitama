@@ -98,24 +98,6 @@ h4 {
   height: auto;
   display: flex;
 }
-#assignButton{
-  margin:auto;
-  width:5em;
-  height: 2.4em;
-  border: 2 solid #ffffff;
-  border-radius: 8px;
-  font-size: 1em; 
-  text-align: center;
-  display: flex;
-  background-color: whitesmoke;
-  justify-content: center;
-}
-#assignButton #assignText {
-  text-align: center;
-  font-size: 13px;
-  color: black;
-  
-}
 
 #saitamaFoot{
   border-radius: 30%;

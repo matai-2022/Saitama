@@ -5,6 +5,7 @@ import peopleChores from '../../data/peopleChores'
 import Form from './Form'
 import People from './People'
 import Chores from './Chores'
+import Footer from './Footer'
 
 function App() {
   const [formData, setFormData] = useState(peopleChores)
@@ -21,6 +22,7 @@ function App() {
         <People formData={formData} />
         <Form getFormData={getFormData} />
         <Chores formData={formData} />
+        {/* <Footer /> */}
       </div>
     </>
   )

@@ -14,7 +14,3 @@ function Header() {
 
 export default Header
 
-// <div className="text-wrapper">
-//   {/* <img src="../server/public/images/space.jpeg" alt=""> */}
-//   <h1> DEVACADEMY CHORES LIST </h1>
-// </div>
