@@ -1,4 +1,4 @@
 export default {
-  People: [],
-  Chores: [],
+  People: ['tim', 'mack', 'bill'],
+  Chores: ['washing', 'sweeping', 'rubbish', 'cleaning'],
 }
