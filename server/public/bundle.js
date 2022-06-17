@@ -17,6 +17,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Form */ "./client/components/Form.jsx");
 /* harmony import */ var _People__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./People */ "./client/components/People.jsx");
 /* harmony import */ var _Chores__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Chores */ "./client/components/Chores.jsx");
+/* harmony import */ var _Assign__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Assign */ "./client/components/Assign.jsx");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -41,17 +42,28 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 function App() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_data_peopleChores__WEBPACK_IMPORTED_MODULE_1__["default"]),
       _useState2 = _slicedToArray(_useState, 2),
       formData = _useState2[0],
       setFormData = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      assignVis = _useState4[0],
+      setAssignVis = _useState4[1];
+
   function getFormData(form) {
     var newFormData = _objectSpread({}, formData);
 
     newFormData[form.table].push(form.chorePeople);
     setFormData(newFormData);
+  }
+
+  function assignChores() {
+    setAssignVis(true);
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -62,10 +74,82 @@ function App() {
     getFormData: getFormData
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chores__WEBPACK_IMPORTED_MODULE_4__["default"], {
     formData: formData
-  })));
+  })), assignVis && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Assign__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    formData: formData
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: assignChores
+  }, "Assign"));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+/***/ }),
+
+/***/ "./client/components/Assign.jsx":
+/*!**************************************!*\
+  !*** ./client/components/Assign.jsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+function Assign(props) {
+  //make a function that assigns chores
+  //display in a list
+  var task = {};
+
+  function assignChores(props) {
+    var tasks = {};
+    var shufflePeople = shuffle(props.formData.People);
+    props.formData.Chores.forEach(function (chore, i) {
+      if (!tasks[shufflePeople[i % shufflePeople.length]]) {
+        tasks[shufflePeople[i % shufflePeople.length]] = [chore];
+      } else {
+        tasks[shufflePeople[i % shufflePeople.length]].push(chore);
+      }
+    });
+    return tasks;
+  }
+
+  task = assignChores(props);
+  var people = Object.keys(task);
+  console.log(people);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "column"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, people.map(function (person, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+      key: i
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, person, " ")), task[person].map(function (chore, i) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        key: i
+      }, chore, " ");
+    }));
+  }))));
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Assign);
+
+function shuffle(array) {
+  var currentIndex = array.length,
+      randomIndex; // While there remain elements to shuffle.
+
+  while (currentIndex != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex-- // And swap it with the current element.
+    ;
+    var _ref = [array[randomIndex], array[currentIndex]];
+    array[currentIndex] = _ref[0];
+    array[randomIndex] = _ref[1];
+  }
+
+  return array;
+}
 
 /***/ }),
 
@@ -215,8 +299,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  People: [],
-  Chores: []
+  People: ['tim', 'mack', 'bill'],
+  Chores: ['washing', 'sweeping', 'rubbish', 'cleaning']
 });
 
 /***/ }),
