@@ -17,10 +17,9 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>This is the start of our amazing app</h1>
-        <Form getFormData={getFormData} />
+      <div className="dashBoard">
         <People formData={formData} />
+        <Form getFormData={getFormData} />
         <Chores formData={formData} />
       </div>
     </>
