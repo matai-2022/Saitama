@@ -36,8 +36,8 @@ function Form(props) {
           value={form.chorePeople}
         />
         <br></br>
-        <button onClick={addPerson}>ADD Person</button>
-        <button onClick={addChore}>ADD Chore</button>
+        <button onClick={addPerson}>ADD PERSON</button>
+        <button onClick={addChore}>ADD CHORE</button>
       </form>
     </div>
   )
