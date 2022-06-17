@@ -43,7 +43,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 function App() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_data_peopleChores__WEBPACK_IMPORTED_MODULE_1__["default"]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -99,40 +98,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Assign(props) {
-  //make a function that assigns chores
-  //display in a list
-  var task = {};
-
-  function assignChores(props) {
-    var tasks = {};
-    var shufflePeople = shuffle(props.formData.People);
-    props.formData.Chores.forEach(function (chore, i) {
-      if (!tasks[shufflePeople[i % shufflePeople.length]]) {
-        tasks[shufflePeople[i % shufflePeople.length]] = [chore];
-      } else {
-        tasks[shufflePeople[i % shufflePeople.length]].push(chore);
-      }
-    });
-    return tasks;
-  }
-
-  task = assignChores(props);
+  var task = assignChores(props);
   var people = Object.keys(task);
-  console.log(people);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "column"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, people.map(function (person, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
       key: i
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, person, " ")), task[person].map(function (chore, i) {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, person)), task[person].map(function (chore, i) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
         key: i
-      }, chore, " ");
+      }, chore);
     }));
   }))));
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Assign);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Assign); // UTILS
 
 function shuffle(array) {
   var currentIndex = array.length,
@@ -149,6 +130,19 @@ function shuffle(array) {
   }
 
   return array;
+}
+
+function assignChores(props) {
+  var tasks = {};
+  var shufflePeople = shuffle(props.formData.People);
+  props.formData.Chores.forEach(function (chore, i) {
+    if (!tasks[shufflePeople[i % shufflePeople.length]]) {
+      tasks[shufflePeople[i % shufflePeople.length]] = [chore];
+    } else {
+      tasks[shufflePeople[i % shufflePeople.length]].push(chore);
+    }
+  });
+  return tasks;
 }
 
 /***/ }),
@@ -225,22 +219,29 @@ function Form(props) {
 
   function addPerson(event) {
     event.preventDefault();
-    props.getFormData(_objectSpread(_objectSpread({}, form), {}, {
-      table: 'People'
-    }));
-    setForm({
-      chorePeople: ''
-    });
+
+    if (form.chorePeople !== '') {
+      console.log('no string');
+      props.getFormData(_objectSpread(_objectSpread({}, form), {}, {
+        table: 'People'
+      }));
+      setForm({
+        chorePeople: ''
+      });
+    }
   }
 
   function addChore(event) {
     event.preventDefault();
-    props.getFormData(_objectSpread(_objectSpread({}, form), {}, {
-      table: 'Chores'
-    }));
-    setForm({
-      chorePeople: ''
-    });
+
+    if (form.chorePeople !== '') {
+      props.getFormData(_objectSpread(_objectSpread({}, form), {}, {
+        table: 'Chores'
+      }));
+      setForm({
+        chorePeople: ''
+      });
+    }
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -298,9 +299,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+// export default {
+//   People: ['tim', 'mack', 'bill'],
+//   Chores: ['washing', 'sweeping', 'rubbish', 'cleaning'],
+// }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  People: ['tim', 'mack', 'bill'],
-  Chores: ['washing', 'sweeping', 'rubbish', 'cleaning']
+  People: [],
+  Chores: []
 });
 
 /***/ }),

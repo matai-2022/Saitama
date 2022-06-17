@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import { Routes, Route } from 'react-router-dom'
-
 import peopleChores from '../../data/peopleChores'
 
 import Form from './Form'
@@ -31,9 +29,6 @@ function App() {
       </div>
       {assignVis && <Assign formData={formData} />}
       <button onClick={assignChores}>Assign</button>
-      {/* <Routes>
-        <Route path="/assign" element={<Assign data={formData} />} />
-      </Routes> */}
     </>
   )
 }

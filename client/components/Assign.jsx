@@ -1,27 +1,8 @@
 import React from 'react'
 
 function Assign(props) {
-  //make a function that assigns chores
-  //display in a list
-  let task = {}
-
-  function assignChores(props) {
-    let tasks = {}
-    let shufflePeople = shuffle(props.formData.People)
-    props.formData.Chores.forEach((chore, i) => {
-      if (!tasks[shufflePeople[i % shufflePeople.length]]) {
-        tasks[shufflePeople[i % shufflePeople.length]] = [chore]
-      } else {
-        tasks[shufflePeople[i % shufflePeople.length]].push(chore)
-      }
-    })
-    return tasks
-  }
-
-  task = assignChores(props)
-
+  let task = assignChores(props)
   const people = Object.keys(task)
-  console.log(people)
 
   return (
     <>
@@ -31,10 +12,10 @@ function Assign(props) {
             return (
               <>
                 <li key={i}>
-                  <h3>{person} </h3>
+                  <h3>{person}</h3>
                 </li>
                 {task[person].map((chore, i) => {
-                  return <li key={i}>{chore} </li>
+                  return <li key={i}>{chore}</li>
                 })}
               </>
             )
@@ -46,6 +27,8 @@ function Assign(props) {
 }
 
 export default Assign
+
+// UTILS
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -65,4 +48,17 @@ function shuffle(array) {
   }
 
   return array
+}
+
+function assignChores(props) {
+  let tasks = {}
+  let shufflePeople = shuffle(props.formData.People)
+  props.formData.Chores.forEach((chore, i) => {
+    if (!tasks[shufflePeople[i % shufflePeople.length]]) {
+      tasks[shufflePeople[i % shufflePeople.length]] = [chore]
+    } else {
+      tasks[shufflePeople[i % shufflePeople.length]].push(chore)
+    }
+  })
+  return tasks
 }
