@@ -11,18 +11,23 @@ function Form(props) {
 
   function addPerson(event) {
     event.preventDefault()
-    props.getFormData({ ...form, table: 'People' })
-    setForm({
-      chorePeople: '',
-    })
+    if (form.chorePeople !== '') {
+      console.log('no string')
+      props.getFormData({ ...form, table: 'People' })
+      setForm({
+        chorePeople: '',
+      })
+    }
   }
 
   function addChore(event) {
     event.preventDefault()
-    props.getFormData({ ...form, table: 'Chores' })
-    setForm({
-      chorePeople: '',
-    })
+    if (form.chorePeople !== '') {
+      props.getFormData({ ...form, table: 'Chores' })
+      setForm({
+        chorePeople: '',
+      })
+    }
   }
 
   return (
